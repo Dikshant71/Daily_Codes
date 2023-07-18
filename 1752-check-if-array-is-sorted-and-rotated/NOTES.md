@@ -5,3 +5,6 @@
 5) from index 0 to n-1 there won't be any​ increment in the count so the count will remain at 0
 6) so for both sorted or rotated the count value will be less or equal to 1(count<=1)
 7) we will return count <=1;
+
+8) Time Complexity-O(N)
+9) Space Complexity-O(1)

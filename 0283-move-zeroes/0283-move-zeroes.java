@@ -2,7 +2,7 @@ class Solution {
     public void moveZeroes(int[] nums) {
         
         int zeros=0;
-        int nonZeros=0;
+        int nonZeros=1;
         
         while(nonZeros<nums.length){
             if(nums[zeros]==0 && nums[nonZeros]!=0){

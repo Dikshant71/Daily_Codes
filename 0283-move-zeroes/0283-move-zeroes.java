@@ -11,14 +11,14 @@ class Solution {
                 nums[nonZeros]=temp;
                 
                 zeros++;
-                nonZeros=zeros+1;
+                nonZeros+=1;
             }
             else if(nums[zeros]==0 && nums[nonZeros]==0){
                 nonZeros++;
             }
             else{
                 zeros++;
-                nonZeros=zeros+1;
+                nonZeros+=1;
             }
             
         }

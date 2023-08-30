@@ -1,6 +1,6 @@
 class Solution {
     public long[] sumOfThree(long num) {
-        long[] arr=new long[3];
+        
        
         
         if(num%3!=0){
@@ -10,7 +10,7 @@ class Solution {
         
         double n=((double)num/3)-1;
         
-        
+        long[] arr=new long[3];
             arr[0]=(long)n;
             arr[1]=(long)n+1;
             arr[2]=(long)n+2;

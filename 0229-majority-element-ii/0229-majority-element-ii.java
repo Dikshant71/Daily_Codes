@@ -3,24 +3,52 @@ class Solution {
         
         List<Integer> list=new ArrayList<>();
         
-        HashMap<Integer,Integer> map=new HashMap<>();
+        int n=nums.length;
         
-        for(int i=0;i<nums.length;i++){
-            if(map.containsKey(nums[i])){
-                map.put(nums[i],map.get(nums[i])+1);
+         int el1=-1,el2=-1;
+        int count1=0,count2=0;
+        
+        for(int i=0;i<n;i++){
+            
+            if(el1==nums[i]){
+                count1++;
+            }
+            else if(el2==nums[i]){
+                count2++;
+            }
+            else if(count1==0 && el2!=nums[i]){
+                count1=1;
+                el1=nums[i];
+            }
+             else if(count2==0 && el1!=nums[i]){
+                count2=1;
+                el2=nums[i];
             }
             else{
-                map.put(nums[i],1);
+                count1--;
+                count2--;
             }
+            
         }
         
-        int k=nums.length/3;
-        
-        for(int key:map.keySet()){
-            if(map.get(key)>k){
-                list.add(key);
+        count1=0;
+        count2=0;
+        for(int i=0;i<n;i++){
+            if(el1==nums[i]){
+                count1++;
+            }
+            else if(el2==nums[i]){
+                count2++;
             }
         }
+        if(count1>n/3){
+            list.add(el1);
+        }
+        if(count2>n/3){
+            list.add(el2);
+        }
+        
+        
         return list;
         
     }

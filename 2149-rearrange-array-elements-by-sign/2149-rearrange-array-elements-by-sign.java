@@ -1,23 +1,21 @@
 class Solution {
     public int[] rearrangeArray(int[] nums) {
-        HashMap<Integer,Integer> map=new HashMap<>();
+        int n=nums.length;
+       int[] arr=new int[n];
         
-        for(int i=0;i<nums.length;i++){
-            map.put(i,nums[i]);
-        }
         int pos=0;
         int neg=1;
         for(int i=0;i<nums.length;i++){
-            if(map.get(i)>=0){
-              nums[pos]= map.get(i);
+            if(nums[i]>=0){
+              arr[pos]= nums[i];
                 pos+=2;
             }
             else{
-                nums[neg]=map.get(i);
+                arr[neg]=nums[i];
                 neg+=2;
             }
         }
-        return nums;
+        return arr;
         
         
         
